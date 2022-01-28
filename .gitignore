@@ -1,2 +1,6 @@
 __pycache__
 bot_token.py
+*.mp4
+
+
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch *.mp4' --prune-empty --tag-name-filter cat -- --all

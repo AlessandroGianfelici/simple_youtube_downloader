@@ -17,6 +17,7 @@ def handle(msg):
                             my_video.streams.filter(only_audio=True)), 
                      key=lambda x : x.abr)[0].download(APP_PATH)
         print(f"File scaricato al percorso {best_stream}")
+        bot.sendDocument(chat_id, open(best_stream, 'rb'))
     else:
         return None
 
