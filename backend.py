@@ -5,6 +5,8 @@ import os, sys
 from bot_token import bot_token
 import validators
 from pytube import YouTube
+from moviepy.editor import *
+
 
 APP_PATH = os.path.dirname(os.path.abspath(__file__))
 
@@ -17,8 +19,11 @@ def handle(msg):
         best_stream = sorted(filter(lambda x : ('mp' in x.mime_type), 
                             my_video.streams.filter(only_audio=True)), 
                      key=lambda x : x.abr)[0].download(APP_PATH)
-        print(f"File scaricato al percorso {best_stream}")
-        bot.sendDocument(chat_id, open(best_stream, 'rb'))
+        video = AudioFileClip(best_stream)
+        audiopath = best_stream.replace(".mp4", ".mp3")
+        video.write_audiofile(audiopath)
+        print(f"File scaricato al percorso {audiopath}")
+        bot.sendDocument(chat_id, open(audiopath, 'rb'))
     else:
         return None
 

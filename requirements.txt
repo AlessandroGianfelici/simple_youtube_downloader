@@ -1,3 +1,4 @@
 pytube
 validators
 telepot
+moviepy
