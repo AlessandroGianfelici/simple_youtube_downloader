@@ -10,6 +10,7 @@ APP_PATH = os.path.dirname(os.path.abspath(__file__))
 
 
 def handle(msg):
+    print(msg)
     chat_id = msg['chat']['id']
     if 'text' in msg.keys() and validators.url(link := msg['text']) and 'youtube' in msg['text'].lower().replace(".", ""):
         my_video = YouTube(link)
