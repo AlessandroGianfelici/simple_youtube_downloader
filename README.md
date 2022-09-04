@@ -9,7 +9,8 @@ pip install -r requirements.txt
 ```
 
 # Usage
-To run the bot, just type:
+Generate your Telegram token using the BotFather bot and type it into the bot_token.py script.
+Then, to run the bot, just launch the backend:
 ```python
 python backend.py
 ```
