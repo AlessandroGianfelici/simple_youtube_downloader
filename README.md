@@ -14,3 +14,4 @@ Then, to run the bot, just launch the backend:
 ```python
 python backend.py
 ```
+Send a YouTube link to the bot and it will answer with the extracted mp3 file.
